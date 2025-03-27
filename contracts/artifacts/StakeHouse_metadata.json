@@ -22,25 +22,6 @@
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "winner",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "prize",
-						"type": "uint256"
-					}
-				],
-				"name": "BonusRewarded",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
 						"name": "user",
 						"type": "address"
 					},
@@ -90,6 +71,25 @@
 					}
 				],
 				"name": "Withdrawn",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "winner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "prize",
+						"type": "uint256"
+					}
+				],
+				"name": "YieldRewarded",
 				"type": "event"
 			},
 			{
@@ -252,11 +252,11 @@
 	},
 	"sources": {
 		"contracts/2_StakeHouse.sol": {
-			"keccak256": "0xdadeca3993f2236feb1c32cae9a7622dc6e95d8e596ee03893b836d15b42c3ff",
+			"keccak256": "0x7e81d462a56b0c70732cf690406c46bf82357f5e32890b2f0ee42d88f5734172",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4854f2885852ad61a00092b2a56cd275d1d85eaf86c8496f0e9d73114a079a56",
-				"dweb:/ipfs/QmXpTPEYm3GzPQgpgeq6KCzqzCQJzvVTAVhUytM194UyLh"
+				"bzz-raw://0883c6703225dee6e2cbc591e690193e501118042815ba346aa4146d44d3ae32",
+				"dweb:/ipfs/QmSqoEenoff2DjxNqkd6P91YKMRxDy4yk3CxJ85DmW71sz"
 			]
 		},
 		"hardhat/console.sol": {

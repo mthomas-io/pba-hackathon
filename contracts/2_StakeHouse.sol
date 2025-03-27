@@ -19,7 +19,7 @@ contract StakeHouse {
 
     event Deposited(address indexed user, uint amount);
     event Withdrawn(address indexed user, uint amount);
-    event BonusRewarded(address indexed winner, uint prize);
+    event YieldRewarded(address indexed winner, uint prize);
     event OwnerSet(address indexed oldOwner, address indexed newOwner);
 
     modifier isOwner() {
@@ -65,11 +65,10 @@ contract StakeHouse {
         emit Withdrawn(msg.sender, amount);
     }
 
-    function distributeBonus() public isOwner {
+    function distributeYield() public isOwner {
         require(block.timestamp >= nextRewardTime, "Too early to distribute bonus");
         require(users.length > 0, "No users yet");
 
-        // 🚨 WARNING: Pseudo-randomness - not secure, just for dev/demo
         uint rand = uint(keccak256(abi.encodePacked(block.timestamp, block.difficulty))) % users.length;
         address selectedUser = users[rand];
 
@@ -79,8 +78,13 @@ contract StakeHouse {
         nextRewardTime = block.timestamp + rewardInterval;
         payable(selectedUser).transfer(bonus);
 
-        emit BonusRewarded(selectedUser, bonus);
+        emit YieldRewarded(selectedUser, bonus);
     }
+
+    function stakeBalances() public isOwner {
+        // Use liquid DOT to stake
+        // Stake all DOT balances
+    } 
 
 
     /**
